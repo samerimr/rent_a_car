@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <title>Available Car</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+      
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">About Us</a>
+              <a class="navbar-brand" href="#">Contact Us</a>
+              <a class="navbar-brand" href="#">Terms and Conditions</a>
+              <a class="navbar-brand" href="#">Log out</a>
+              <a class="navbar-brand" href="#">......</a>
+            </div>
+          </nav>
+    </header>
+    </div>
+
+    <ul class="errors">
+        <li><p style="color: red;">{{ message }}</p></li>
+    </ul>
+    <div>
+        <h3>Available Car</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Production Year</th>
+                    <th>Color</th>
+                    <th>Book</th>
+                </tr>
+            </thead>
+     
+                
+                {% for car in rental %}
+                <tr>
+                    <td><a href="/car/{{car.id}}">{{ car.destination }}</a></td>
+                    <td>{{ car.brand }}</td>
+                    <td>{{ car.model}}</td>
+                    <td>{{ car.production_year }}</td>
+                    <td>{{ car.color }}</td>
+                    <td>{{ car.production_year }}</td>
+                    <td><a href="/car/{{car.id}}/join">Join</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
