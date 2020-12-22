@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mx-auto" style="width: 300px;">
+                    <br>
+                    <h1>Customer Info</h1>
+                </div>
+                <br>
+                <h2> Customer Info</h2>
+                <h3> First Name: {{user.first_name}}</h3>
+                <h3> Last Name: {{user.last_name}}</h3>
+                <h3> Phone Number: {{user.phone_num}}</h3>
+                <h3> E-mail: {{user.email}}</h3>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="mx-auto" style="width: 300px;">
+                    <br>
+                    <h1>Rented Car</h1>
+                </div>
+                <br>
+                <h2> Rented Car Info</h2>
+                <h3> Car Type: {{car.brand}}</h3>
+                <h3> Color: {{car.color}}</h3>
+                <h3> Fuel Type: {{car.fuel_type}}</h3>
+                <h3> Year of Production: {{car.production_year}}</h3>
+                <h3> Gear Type: {{car.gear_type}}</h3>
+                <h3> Notes: {{car.notes}}</h3>
+                <h3> Photo: {{car.photo}}</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
