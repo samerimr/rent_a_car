@@ -19,16 +19,18 @@
                 <a class="navbar-brand" href="#">About Us</a>
                 <a class="navbar-brand" href="#">Contact Us</a>
                 <a class="navbar-brand" href="#">Terms and Conditions</a>
+                <a class="navbar-brand" href="car_list">Rent</a>
+                <a class="navbar-brand" href="/logout">Log out</a>
             </div>
         </nav>
         <div class="row">
             <div class="col-lg-6">
                 <div class="mx-auto" style="width: 300px;">
                     <br>
-                    <h1>Registration</h1>
+                    <h1>Booking</h1>
                 </div>
                 <br>
-                <form action="/book/{{car.id}}" method="post">
+                <form action="book" method="post">
                     {% csrf_token %}
                     <div class="mb-3 row ">
                         <label for="inputDays" class="col-sm-3 col-form-label">Number of days:</label>
@@ -52,45 +54,67 @@
                         <button type="submit" class="btn btn-primary col-3 row justify-content-around">check price</button>
                     </div>
                 </form>
-
-            </div>
-
-            <div class="col-lg-6">
-                <div class="mx-auto" style="width: 300px;">
-                    <br>
-                    <h1>Total: {{total_cost}}</h1>
-                </div>
                 <br>
-                <form action="/success" method="post"> {% csrf_token %}
-                    <div class="col-12 ">
-                        <button type="submit " class="btn btn-primary col-2 row justify-content-around ">Book</button>
-                    </div>
-                </form>
                 <br>
             </div>
         </div>
-
-        <br>
-        <footer class="bg-primary text-white text-center text-lg-start col-12 bg-dark">
-            <!-- Grid container -->
-            <div class="container p-4 bg-dark">
-                <!--Grid row-->
-                <div class="row bg-dark">
-                    <!--Grid column-->
-                    <div class="col-12-lg-6 col-md-12 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Contact Us</h5>
-                        <p>
-                            Phone number: 0599-9999-99
-                        </p>
-                        <p>
-                            Email: info@rent-a-car.com
-                        </p>
-                    </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mx-auto" style="width: 300px;">
+                    <br>
+                    <h1>Booking</h1>
                 </div>
-                <!--Grid row-->
+                <br>
+                <form action="book" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3 row ">
+                        <label for="inputDays" class="col-sm-3 col-form-label">Number of days:</label>
+                        <div class="col-7 ">
+                            <input type="text" class="form-control" id="inputFirstname" Name="days">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputDays" class="col-sm-3 col-form-label ">Daily Price:</label>
+                        <div class="col-7 ">
+                            <p>{{thisCar.price}}</p>
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputEmail" class="col-sm-3 col-form-label ">Total Cost:</label>
+                        <div class="col-7 ">
+                            <p>{{total_cost}}</p>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary col-3 row justify-content-around">check price</button>
+                    </div>
+                </form>
+                <br>
+                <br>
             </div>
 
-        </footer>
+            <footer class="bg-primary text-white text-center text-lg-start col-12 bg-dark">
+                <!-- Grid container -->
+                <div class="container p-4 bg-dark">
+                    <!--Grid row-->
+                    <div class="row bg-dark">
+                        <!--Grid column-->
+                        <div class="col-12-lg-6 col-md-12 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Contact Us</h5>
+                            <p>
+                                Phone number: 0599-9999-99
+                            </p>
+                            <p>
+                                Email: info@rent-a-car.com
+                            </p>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                </div>
+
+            </footer>
+        </div>
+
 </body>
 
 </html>

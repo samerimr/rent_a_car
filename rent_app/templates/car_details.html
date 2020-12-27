@@ -24,42 +24,44 @@
             </div>
         </nav>
         <div class="text-center">
-            <h1>Dashboard</h1>
+            <h1>Car Details</h1>
         </div>
         <h2>Welcome {{request.session.first_name}} {{request.session.last_name}}!!</h2>
         <div class="row">
             <div class="col-lg-6">
                 <div class="mx-auto" style="width: 300px;">
                     <br>
-                    <h1>Customer Info</h1>
+                    <h1>Car Info</h1>
                 </div>
                 <br>
-                <h2> Customer Info</h2>
-                <h3> First Name: {{request.session.first_name}}</h3>
-                <h3> Last Name: {{request.session.last_name}}</h3>
-                <h3> Phone Number: {{request.session.phone_num}}</h3>
-                <h3> E-mail: {{request.session.email}}</h3>
+                <h3>{{thisCar.brand}} {{thisCar.model}}</h3>
+                <div>
+                    <p>Brand: {{thisCar.brand}}</p>
+                    <p>Model: {{thisCar.model}}</p>
+                    <p>Color: {{thisCar.color}}</p>
+                    <p>Fuel Type: {{thisCar.fuel_type}}</p>
+                    <p>Gear Type: {{thisCar.gear_type}}</p>
+                    <p>Production Date: {{thisCar.production_date}}</p>
+                    <p>Daily Rent: {{thisCar.price}}</p>
+
+                    <a class="btn btn-primary col-2 row justify-content-around ml-md-5" href="/book/{{car.id}}" role="button">Book</a>
+                </div>
             </div>
 
             <div class="col-lg-6">
                 <div class="mx-auto" style="width: 300px;">
                     <br>
-                    <h1>Rented Car</h1>
+                    <h1>Photo</h1>
                 </div>
                 <br>
-                <!-- <h2> Rented Car Info</h2>
-                <h3> Brand {{car.brand}}</h3>
-                <h3> Model: {{car.model}}</h3>
-                <h3> Color: {{car.color}}</h3>
-                <h3> Fuel Type: {{car.fuel_type}}</h3>
-                <h3> Year of Production: {{car.production_year}}</h3>
-                <h3> Gear Type: {{car.gear_type}}</h3>
-                <h3> Photo: {{car.photo}}</h3>
-                <h3> Daily Rent: {{car.price}}</h3> -->
+
+
+                <img src="{{thisCar.photo.url}}" alt="car image" class="img-fluid">
+
 
             </div>
 
-            <footer class="bg-primary text-white text-center text-lg-start col-12 bg-dark">
+            <footer class="bg-primary text-white text-center text-lg-start col-12 bg-dark mt-md-4">
                 <!-- Grid container -->
                 <div class="container p-4 bg-dark">
                     <!--Grid row-->

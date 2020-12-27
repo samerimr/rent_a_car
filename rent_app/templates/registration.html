@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">About Us</a>
+                <a class="navbar-brand" href="#">Contact Us</a>
+                <a class="navbar-brand" href="#">Terms and Conditions</a>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mx-auto" style="width: 300px;">
+                    <br>
+                    <h1>Registration</h1>
+                </div>
+                <br>
+                <form action="register" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3 row ">
+                        <label for="inputFirstname" class="col-sm-3 col-form-label ">First Name</label>
+                        <div class="col-7 ">
+                            <input type="text" class="form-control" id="inputFirstname" Name="first_name">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputLastname" class="col-sm-3 col-form-label ">Last Name</label>
+                        <div class="col-7 ">
+                            <input type="text" class="form-control" id="inputLastname" Name="last_name">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputEmail" class="col-sm-3 col-form-label ">Email Address</label>
+                        <div class="col-7 ">
+                            <input type="email" class="form-control" id="inputEmail" Name="email">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputPhonenum" class="col-sm-3 col-form-label ">Phone Number</label>
+                        <div class="col-7 ">
+                            <input type="text" class="form-control" id="inputPhonenum" Name="phone_num">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputPassword" class="col-sm-3 col-form-label ">Password</label>
+                        <div class="col-7 ">
+                            <input type="password" class="form-control" id="inputPassword" Name="password">
+                        </div>
+                        <span id="passwordHelpInline" class="form-text ml-3 text-muted">
+                                Must be 8-20 characters long.
+                        </span>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputConfpassword" class="col-sm-3 col-form-label ">Confirm PW</label>
+                        <div class="col-7 ">
+                            <input type="password" class="form-control" id="inputConfpassword" Name="confirm_pw">
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary col-2 row justify-content-around">Register</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="col-lg-6">
+                <div class="mx-auto" style="width: 300px;">
+                    <br>
+                    <h1>Login</h1>
+                </div>
+                <br>
+                <form action="/login" method="post"> {% csrf_token %}
+                    <div class="mb-3 row ">
+                        <label for="inputEmail" class="col-sm-3 col-form-label ">Email Address</label>
+                        <div class="col-7 ">
+                            <input type="email" class="form-control" id="inputEmail" Name="email">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputPassword" class="col-sm-3 col-form-label ">Password</label>
+                        <div class="col-7 ">
+                            <input type="password" class="form-control" id="inputPassword" Name="password">
+                        </div>
+                    </div>
+                    <div class="col-12 ">
+                        <button type="submit " class="btn btn-primary col-2 row justify-content-around ">Login</button>
+                    </div>
+                </form>
+                <br> {% if messages %}
+                <h3>Oops!</h3>
+                <p>There was a problem with the form:</p>
+                {% for i in messages %}
+                <ul>
+                    <li>{{ i }}</li>
+                </ul>
+                {% endfor %} {% endif %}
+            </div>
+        </div>
+
+        <br>
+        <footer class="bg-primary text-white text-center text-lg-start col-12 bg-dark">
+            <!-- Grid container -->
+            <div class="container p-4 bg-dark">
+                <!--Grid row-->
+                <div class="row bg-dark">
+                    <!--Grid column-->
+                    <div class="col-12-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Contact Us</h5>
+                        <p>
+                            Phone number: 0599-9999-99
+                        </p>
+                        <p>
+                            Email: info@rent-a-car.com
+                        </p>
+                    </div>
+                </div>
+                <!--Grid row-->
+            </div>
+
+        </footer>
+</body>
+
+</html>

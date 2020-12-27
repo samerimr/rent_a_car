@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">About Us</a>
+                <a class="navbar-brand" href="#">Contact Us</a>
+                <a class="navbar-brand" href="#">Terms and Conditions</a>
+                <a class="navbar-brand" href="/car_list">Rent</a>
+                <a class="navbar-brand" href="/logout">Log Out</a>
+            </div>
+        </nav>
+        <div class="mb-3">
+            <label style="color: rgb(132, 27, 218)" for="exampleFormControlTextarea1" class="form-label"></label>
+            <textarea style="color: rgb(103, 16, 216)" class="form-control" id="exampleFormControlTextarea1" rows="3">            Did you know?
+                Our customer service team are happy to help, but in many cases it’s quicker and easier to manage your booking online.</textarea>
+        </div>
+        <table class="table">
+            <thead class="table-Info">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Whatsapp</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Maintenance Department</th>
+                    <td>0599999999</td>
+                    <td>+970599999999</td>
+                    <td>AxsosMaintenance@info.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">Human resources</th>
+                    <td>0599444444</td>
+                    <td>+970599444444</td>
+                    <td>AxsosHR@info.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">Engineering departments</th>
+                    <td colspan="2">0599666666</td>
+                    <td>AxsosEngineering@info.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="card" style="width: 55%;">
+            <p style="color: rgb(132, 27, 218)" class="card-text">You made a good choice</p>
+            <img src="static/image/contact.jpg" class="card-img-top" alt="...">
+        </div>
+
+        <footer class="bg-primary text-white text-center text-lg-start col-12 bg-dark mt-md-4">
+            <!-- Grid container -->
+            <div class="container p-4 bg-dark">
+                <!--Grid row-->
+                <div class="row bg-dark">
+                    <!--Grid column-->
+                    <div class="col-12-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Contact Us</h5>
+                        <p>
+                            Phone number: 0599-9999-99
+                        </p>
+                        <p>
+                            Email: info@rent-a-car.com
+                        </p>
+                    </div>
+                </div>
+                <!--Grid row-->
+            </div>
+
+        </footer>
+    </div>
+
+</body>
+
+</html>

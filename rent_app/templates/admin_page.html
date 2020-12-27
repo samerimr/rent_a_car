@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">About Us</a>
+                <a class="navbar-brand" href="#">Contact Us</a>
+                <a class="navbar-brand" href="#">Terms and Conditions</a>
+                <a class="navbar-brand" href="/logout">Log out</a>
+            </div>
+        </nav>
+        <div class="text-center">
+            <h1>Admin Page</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mx-auto" style="width: 300px;">
+                    <br>
+                    <h1>Add Car</h1>
+                </div>
+                <br>
+                <form action="/add_car" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-3 row ">
+                        <label for="inputFirstname" class="col-sm-3 col-form-label ">Brand</label>
+                        <div class="col-7 ">
+                            <input type="text" class="form-control" id="inputFirstname" Name="brand">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputLastname" class="col-sm-3 col-form-label ">Model</label>
+                        <div class="col-7 ">
+                            <input type="text" class="form-control" id="inputLastname" Name="model">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputEmail" class="col-sm-3 col-form-label ">Color</label>
+                        <div class="col-7 ">
+                            <input type="text" class="form-control" id="inputEmail" Name="color">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputPhonenum" class="col-sm-3 col-form-label ">Fuel Type</label>
+                        <div class="col-7 ">
+                            <input type="text" class="form-control" id="inputPhonenum" Name="fuel_type">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputPhonenum" class="col-sm-3 col-form-label ">Gear Type</label>
+                        <div class="col-7 ">
+                            <input type="text" class="form-control" id="inputPhonenum" Name="gear_type">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputPhonenum" class="col-sm-3 col-form-label ">Date of Production</label>
+                        <div class="col-7 ">
+                            <input type="text" class="form-control" id="inputPhonenum" Name="production_date">
+                        </div>
+                    </div>
+                    <div class="mb-3 row ">
+                        <label for="inputPhonenum" class="col-sm-3 col-form-label ">Price Per Day</label>
+                        <div class="col-7 ">
+                            <input type="text" class="form-control" id="inputPhonenum" Name="price">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="customFile">Upload Image</label>
+                        <input type="file" class="form-control" id="customFile" name="photo" />
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary col-2 row justify-content-around">Upload</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <br> {% if messages %}
+                <h3>Oops!</h3>
+                <p>There was a problem with the form:</p>
+                {% for i in messages %}
+                <ul>
+                    <li>{{ i }}</li>
+                </ul>
+                {% endfor %} {% endif %}
+            </div>
+        </div>
+
+        <br>
+        <footer class="bg-primary text-white text-center text-lg-start col-12 bg-dark">
+            <!-- Grid container -->
+            <div class="container p-4 bg-dark">
+                <!--Grid row-->
+                <div class="row bg-dark">
+                    <!--Grid column-->
+                    <div class="col-12-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Contact Us</h5>
+                        <p>
+                            Phone number: 0599-9999-99
+                        </p>
+                        <p>
+                            Email: info@rent-a-car.com
+                        </p>
+                    </div>
+                </div>
+                <!--Grid row-->
+            </div>
+
+        </footer>
+</body>
+
+</html>
